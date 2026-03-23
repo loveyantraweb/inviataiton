@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title><strong>Bazaar-O-Nomics Invitation</strong></title>
+    <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="butterfly.css">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="app"></div>
+
+<div class="envelope" onclick="openInvite()"></div>
+
+<div class="card" id="inviteCard">
+
+<img src="logo.png" class="logo">
+
+<h1><strong>Bazaar-O-Nomics</strong></h1>
+<p id="countdown"></p>
+<p>You are cordially invited</p>
+
+<h2 id="teacher"></h2>
+
+<p>Invitation for Bazaar-O-Nomics</p>
+
+<p>Date: 15 April 2026</p>
+<p>Venue: College Campus</p>
+
+<h3>E-Signature</h3>
+
+<canvas id="signature" width="300" height="150"></canvas>
+<div class="stalls">
+🍔 Food Stall &nbsp;&nbsp; 🎨 Art Stall &nbsp;&nbsp; 👕 Fashion Stall &nbsp;&nbsp; 📚 Book Stall
+</div>
+  <h3>Event Stall Map</h3>
+
+<div class="map">
+
+<div>🍔 Food Zone</div>
+<div>🎨 Art Zone</div>
+<div>👕 Fashion Zone</div>
+<div>📚 Book Zone</div>
+
+</div>
+
+<div class="scroll" id="scrollLetter">
+<p>You are cordially invited</p>
+<p>Date: 15 April 2026</p>
+<p>Venue: College Campus</p>
+</div>
+
+<style>
+/* Desktop block */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  body::before {
+    content: "Open this on mobile 📱";
+    font-size: 24px;
+    color: black;
+  }
+
+  .envelope, .card {
+    display: none !important;
+  }
+}
+</style>
+
+<br>
+
+<button onclick="clearSign()">Clear</button>
+<button onclick="submitSign()">Accept Invitation</button>
+
+</div>
+
+<script src="teachers.js"></script>
+<script src="script.js"></script>
+<script type="module" src="butterfly.js"></script>
+
+<script>
+
+function openInvite(){
+
+document.querySelector(".envelope").style.display="none";
+document.getElementById("inviteCard").style.display="block";
+
+setTimeout(function(){
+document.getElementById("scrollLetter").classList.add("open");
+},300);
+}
+
+
+</script>
+
+</body>
+
+</html>
